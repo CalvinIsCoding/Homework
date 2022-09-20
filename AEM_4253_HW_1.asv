@@ -1,0 +1,80 @@
+%% main script
+
+%% Explicit Euler
+% ODE
+
+rhs = @(t,y) -2*y;
+
+
+% Boundary Condition. When t = 0?
+
+y0 = 4;
+
+
+% time step
+
+ts = 0.1;
+time = 0:ts:15;
+y = ExpEuler(rhs,time,ts,y0);
+
+plot(time,y)
+
+
+%% Implicit Euler
+
+% ODE
+rhs = @(t,y) -2*y;
+
+% Derivative
+
+
+drhs = @(t,y) -2;
+% Boundary Condition. When t = 0?
+
+y0 = 4;
+
+
+% time step
+
+ts = 0.1;
+time = 0:ts:15;
+y = ImpEuler(rhs, drhs, time,ts,y0);
+
+plot(time,y)
+
+%% Second Order Runge-Kutta
+
+% ODE
+rhs = @(t,y) -2*y;
+
+% Boundary Condition. When t = 0?
+
+y0 = 4;
+
+
+% time step
+
+ts = 1;
+time = 0:ts:15;
+y = RK2(rhs, time,ts,y0);
+
+plot(time,y)
+
+%% Fourth Order Runge-Kutta
+
+% ODE
+rhs = @(t,y) -2*y;
+
+% Boundary Condition. When t = 0?
+
+y0 = 4;
+
+
+% time step
+ts = 1;
+time = 0:ts:15;
+
+solving
+y = RK2(rhs, time,ts,y0);
+
+plot(time,y)

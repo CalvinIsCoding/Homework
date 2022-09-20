@@ -1,0 +1,28 @@
+function [xOut] = ImpEuler(rhs, drhs, time,dT, y0)
+
+
+p = length(time);
+n = length(y0);
+
+g = @(xsym) rhs(time, xsym);
+gp = @(xsym2) drhs(time, xsym2);
+
+state = y0;
+stateRecord = zeros(n,p);
+stateRecord(:,1) = y0;
+
+
+for i = 1:p-1                                                            
+    state = stateRecord(:,i);
+    
+   g1 = g(state);
+   gp1 = gp(state);
+   
+   
+    
+    %stateRecord(:,i+1) = ((-gp1 * dT * state) + (dT * g1 * state) + state)/(1-(gp1 * dT));
+    %stateRecord(:,i+1) = 
+end
+
+xOut = stateRecord;
+end

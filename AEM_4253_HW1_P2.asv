@@ -1,0 +1,23 @@
+%% ODE
+
+rhs = @(t,y) -(2 + 0.01 * t^2) * y;
+
+%% Exact Solution
+
+ 
+
+%% Explicit Euler 
+
+% for explicit euler to be stable, mag(1+c*dT)less than or equal to 1
+% for problem 2, c is simply -(2 + 0.01*t^2) yes? since c =-2 at t=0 and
+% c = -4.25 when t = 15, and since c is purely real in this case
+% dT <= 2/4.25
+
+% maximum stable timestep
+ts = 0.1
+y = ExpEuler(rhs,time,ts,y0);
+ts = 0.
+%% Implicit Euler
+
+%maximum stable timestep
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
